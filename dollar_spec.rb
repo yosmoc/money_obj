@@ -6,7 +6,6 @@ require './dollar'
 describe Dollar do
   before do
     @five = Dollar.new(5);
-    @five_ = Dollar.new(5)
   end
 
   it '@fiveを2倍にしたら10になる' do
@@ -19,6 +18,11 @@ describe Dollar do
   end
 
   it '$5ドルと$5ドルは同じとなる' do
-    @five.equal(@five_)
+    @five.equal(Dollar.new(5)).should be_true
   end
+
+  it '$5ドルと$6ドルは同じとならない' do
+    @five.equal(Dollar.new(6)).should be_false
+  end
+
 end
