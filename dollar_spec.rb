@@ -9,12 +9,12 @@ describe Dollar do
   end
 
   it '@fiveを2倍にしたら10になる' do
-    @five.times(2).amount.should == 10
+    @five.times(2).equal(Dollar.new(10))
   end
 
   it '@fiveを3倍にしたら15になる' do
     @five.times(2)
-    @five.times(3).amount.should == 15
+    @five.times(3).equal(Dollar.new(15))
   end
 
   it '$5ドルと$5ドルは同じとなる' do
