@@ -1,15 +1,7 @@
-class Franc
-  def initialize(amount)
-    @amount = amount
-  end
+require './money'
 
-  attr_reader :amount
-
+class Franc < Money
   def times(multiplier)
     return Franc.new(@amount * multiplier)
-  end
-
-  def equal(dollar)
-    return @amount == dollar.amount
   end
 end
