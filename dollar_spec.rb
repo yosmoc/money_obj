@@ -24,5 +24,4 @@ describe Dollar do
   it '$5ドルと$6ドルは同じとならない' do
     @five.equal(Dollar.new(6)).should be_false
   end
-
 end
