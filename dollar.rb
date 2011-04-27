@@ -5,7 +5,4 @@ class Dollar < Money
     return Dollar.new(@amount * multiplier)
   end
 
-  def equal(dollar)
-    return @amount == dollar.amount
-  end
 end

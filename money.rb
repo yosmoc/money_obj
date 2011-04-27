@@ -4,4 +4,8 @@ class Money
   end
 
   attr_reader :amount
+
+  def equal(dollar)
+    return @amount == dollar.amount
+  end
 end
