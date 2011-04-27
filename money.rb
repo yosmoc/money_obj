@@ -6,6 +6,6 @@ class Money
   attr_reader :amount
 
   def equal(dollar)
-    return @amount == dollar.amount
+    return @amount == dollar.amount && self.class == dollar.class
   end
 end
