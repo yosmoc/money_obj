@@ -8,4 +8,4 @@
 ■equalsの一般化
 □timesの一般化
 ■FrancとDollarの比較
-□currencyのリファクタリング
+■currencyのリファクタリング
