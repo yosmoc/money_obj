@@ -19,12 +19,20 @@ class Money
 end
 
 class Dollar < Money
+  def currency
+    return 'USD'
+  end
+
   def times(multiplier)
     return Dollar.new(@amount * multiplier)
   end
 end
 
 class Franc < Money
+  def currency
+    return 'CHF'
+  end
+
   def times(multiplier)
     return Franc.new(@amount * multiplier)
   end
