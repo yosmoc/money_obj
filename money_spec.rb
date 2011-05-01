@@ -46,11 +46,11 @@ describe Franc do
     @five.times(3).equal(Franc.new(15))
   end
 
-  it '$5ドルと$5ドルは同じとなる' do
+  it '$5francと$5francは同じとなる' do
     @five.equal(Franc.new(5)).should be_true
   end
 
-  it '$5ドルと$6ドルは同じとならない' do
+  it '$5francと$6francは同じとならない' do
     @five.equal(Franc.new(6)).should be_false
   end
 end
