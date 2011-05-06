@@ -11,35 +11,37 @@ class Money
 
 
   def self.dollar(dollar)
-    return Dollar.new(dollar)
+    return Dollar.new(dollar, 'USD')
   end
 
   def self.franc(franc)
-    return Franc.new(franc)
+    return Franc.new(franc, 'CHF')
+  end
+
+  def currency
+    return @currency
   end
 end
 
 class Dollar < Money
-  @@currency = 'USD'
-
-  def currency
-    return @@currency
+  def initialize(amount, currency)
+    @amount   = amount
+    @currency = currency
   end
 
   def times(multiplier)
-    return Dollar.new(@amount * multiplier)
+    return Money.dollar(@amount * multiplier)
   end
 end
 
 class Franc < Money
-  @@currency = 'CHF'
-
-  def currency
-    return @@currency
+  def initialize(amount, currency)
+    @amount   = amount
+    @currency = currency
   end
 
   def times(multiplier)
-    return Franc.new(@amount * multiplier)
+    return Money.franc(@amount * multiplier)
   end
 end
 
