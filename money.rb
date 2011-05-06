@@ -16,16 +16,16 @@ class Money
   def self.franc(franc)
     return Franc.new(franc, 'CHF')
   end
+
+  def currency
+    return @currency
+  end
 end
 
 class Dollar < Money
   def initialize(amount, currency)
     @amount   = amount
     @currency = currency
-  end
-
-  def currency
-    return @currency
   end
 
   def times(multiplier)
@@ -37,10 +37,6 @@ class Franc < Money
   def initialize(amount, currency)
     @amount   = amount
     @currency = currency
-  end
-
-  def currency
-    return @currency
   end
 
   def times(multiplier)
