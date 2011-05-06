@@ -1,6 +1,7 @@
 class Money
-  def initialize(amount)
-    @amount = amount
+  def initialize(amount, currency)
+    @amount   = amount
+    @currency = currency
   end
 
   attr_reader :amount
@@ -23,22 +24,12 @@ class Money
 end
 
 class Dollar < Money
-  def initialize(amount, currency)
-    @amount   = amount
-    @currency = currency
-  end
-
   def times(multiplier)
     return Money.dollar(@amount * multiplier)
   end
 end
 
 class Franc < Money
-  def initialize(amount, currency)
-    @amount   = amount
-    @currency = currency
-  end
-
   def times(multiplier)
     return Money.franc(@amount * multiplier)
   end

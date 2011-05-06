@@ -14,20 +14,20 @@ describe Money do
     end
  
     it '@fiveを2倍にしたら10になる' do
-      @five.times(2).equal(Dollar.new(10, 'USD'))
+      @five.times(2).equal(Money.dollar(10))
     end
 
     it '@fiveを3倍にしたら15になる' do
       @five.times(2)
-      @five.times(3).equal(Dollar.new(15, 'USD'))
+      @five.times(3).equal(Money.dollar(15))
     end
 
     it '$5ドルと$5ドルは同じとなる' do
-      @five.equal(Dollar.new(5, 'USD')).should be_true
+      @five.equal(Money.dollar(5)).should be_true
     end
     
     it '$5ドルと$6ドルは同じとならない' do
-      @five.equal(Dollar.new(6, 'USD')).should be_false
+      @five.equal(Money.dollar(6)).should be_false
     end
 
     it '通貨単位はUSD' do
@@ -41,20 +41,20 @@ describe Money do
     end
     
     it '@fiveを2倍にしたら10になる' do
-      @five.times(2).equal(Franc.new(10, 'CHF'))
+      @five.times(2).equal(Money.franc(10))
     end
 
     it '@fiveを3倍にしたら15になる' do
       @five.times(2)
-      @five.times(3).equal(Franc.new(15, 'CHF'))
+      @five.times(3).equal(Money.franc(15))
     end
 
     it '$5francと$5francは同じとなる' do
-      @five.equal(Franc.new(5, 'CHF')).should be_true
+      @five.equal(Money.franc(5)).should be_true
     end
 
     it '$5francと$6francは同じとならない' do
-      @five.equal(Franc.new(6, 'CHF')).should be_false
+      @five.equal(Money.franc(6)).should be_false
     end
 
     it '通貨単位はCHF' do
@@ -62,6 +62,3 @@ describe Money do
     end
   end
 end
-
-
-
