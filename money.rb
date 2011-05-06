@@ -12,11 +12,11 @@ class Money
 
 
   def self.dollar(dollar)
-    return Dollar.new(dollar, 'USD')
+    return Money.new(dollar, 'USD')
   end
 
   def self.franc(franc)
-    return Franc.new(franc, 'CHF')
+    return Money.new(franc, 'CHF')
   end
 
   def currency
@@ -28,9 +28,4 @@ class Money
   end
 end
 
-class Dollar < Money
-end
-
-class Franc < Money
-end
 
