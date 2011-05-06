@@ -26,13 +26,13 @@ end
 
 class Dollar < Money
   def times(multiplier)
-    return Money.dollar(@amount * multiplier)
+    return Dollar.new(@amount * multiplier, "USD")
   end
 end
 
 class Franc < Money
   def times(multiplier)
-    return Money.franc(@amount * multiplier)
+    return Franc.new(@amount * multiplier, "CHF")
   end
 end
 
