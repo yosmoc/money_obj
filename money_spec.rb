@@ -23,11 +23,11 @@ describe Money do
     end
 
     it '$5ドルと$5ドルは同じとなる' do
-      @five.equal(Money.dollar(5)).should be_true
+      @five.equal(Money.new(5, "USD")).should be_true
     end
     
     it '$5ドルと$6ドルは同じとならない' do
-      @five.equal(Money.dollar(6)).should be_false
+      @five.equal(Money.new(6, "USD")).should be_false
     end
 
     it '通貨単位はUSD' do
@@ -50,11 +50,11 @@ describe Money do
     end
 
     it '$5francと$5francは同じとなる' do
-      @five.equal(Money.franc(5)).should be_true
+      @five.equal(Money.new(5, "CHF")).should be_true
     end
 
     it '$5francと$6francは同じとならない' do
-      @five.equal(Money.franc(6)).should be_false
+      @five.equal(Money.new(6, "CHF")).should be_false
     end
 
     it '通貨単位はCHF' do

@@ -6,8 +6,8 @@ class Money
 
   attr_reader :amount
 
-  def equal(dollar)
-    return @amount == dollar.amount && self.class == dollar.class
+  def equal(other)
+    return @amount == other.amount && self.currency == other.currency
   end
 
 
@@ -22,17 +22,15 @@ class Money
   def currency
     return @currency
   end
+
+  def times(multiplier)
+    return Money.new(@amount * multiplier, @currency)
+  end
 end
 
 class Dollar < Money
-  def times(multiplier)
-    return Dollar.new(@amount * multiplier, currency)
-  end
 end
 
 class Franc < Money
-  def times(multiplier)
-    return Franc.new(@amount * multiplier, currency)
-  end
 end
 
