@@ -33,6 +33,10 @@ describe Money do
   it '通貨単位はUSD' do
     @five_dollar.currency.should be_eql("USD")
   end
+
+  it '$5 + $5 = $10' do
+    @five_dollar.plus(Money.dollar(5)).currency.should == Money.dollar(10).currency
+  end
   
   it '5francを2倍にしたら10francになる' do
     @five_franc.times(2).equal(Money.franc(10))
