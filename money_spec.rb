@@ -35,7 +35,10 @@ describe Money do
   end
 
   it '$5 + $5 = $10' do
-    @five_dollar.plus(Money.dollar(5)).currency.should == Money.dollar(10).currency
+    bank = Bank.new()
+    sum = @five_dollar.plus(@five_dollar)
+    reduced = bank.reduce(sum, "USD")
+    reduced.currency.should == Money.dollar(10).currency
   end
   
   it '5francを2倍にしたら10francになる' do

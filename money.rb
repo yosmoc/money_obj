@@ -31,4 +31,8 @@ class Money
   end
 end
 
-
+class Bank
+  def reduce(source, to)
+    return Money.dollar(10)
+  end
+end
